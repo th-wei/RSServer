@@ -2,7 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const cors = require("cors"); // Allows access from external sources
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Start the server
 // ✅ Enable CORS to allow requests from Chrome extensions
@@ -39,6 +39,7 @@ app.get("/rss.xml", async (req, res) => {
                 <title>${article.title}</title>
                 <link>${article.link}</link>
                 <description>${article.description}</description>
+                ${article.imageUrl}
             </item>`;
   });
 
