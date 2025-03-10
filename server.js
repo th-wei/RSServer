@@ -39,7 +39,6 @@ app.get("/rss.xml", async (req, res) => {
                 <title>${article.title}</title>
                 <link>${article.link}</link>
                 <description>${article.description}</description>
-                <dc:creator>${article.author}</dc:creator>
             </item>`;
   });
 
