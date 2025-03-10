@@ -25,12 +25,12 @@ app.post("/update-rss", (req, res) => {
 });
 
 // Serve RSS as XML
-app.get("/rss.xml", async (req, res) => {
+app.get("/", async (req, res) => {
   let rssXML = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0">
         <channel>
             <title>My Read Articles</title>
-            <link>http://localhost:${PORT}/rss.xml</link>
+            <link>http://localhost:${PORT}</link>
             <description>Articles I have read and saved</description>`;
 
   articles?.forEach((article) => {
@@ -52,5 +52,5 @@ app.get("/rss.xml", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 RSS Feed running at http://localhost:${PORT}/rss.xml`);
+  console.log(`🚀 RSS Feed running`);
 });
