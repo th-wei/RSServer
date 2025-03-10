@@ -39,7 +39,7 @@ app.get("/rss.xml", async (req, res) => {
                 <title>${article.title}</title>
                 <link>${article.link}</link>
                 <description>${article.description}</description>
-                ${article.imageUrl}
+                <media:content url="${article.imageUrl}"/>
             </item>`;
   });
 
